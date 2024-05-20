@@ -51,18 +51,15 @@ export class Type4B5B
     public static fromMLT3(codemlt3: string):string
     {
         let output: string = "";
-        if (codemlt3 == "")
-        {
-            output = "";
-        } else {
+        if (codemlt3 !== "") {
             let codemlt3array: string[] = codemlt3.replace(/\s/g, '').match(/./g);
             let lastsymbol: string[] = ["0"].concat(codemlt3array); //mlt3 always starting with a 0 on the index [-1]
 
             for(let i: number = 0; i < codemlt3array.length; i++)
             {
-                if(codemlt3array[i] == lastsymbol[i]){
+                if (codemlt3array[i] == lastsymbol[i]){
                     output+= "0";
-                } else if(codemlt3array[i] == " ") {
+                } else if (codemlt3array[i] == " ") {
                     output += " ";
                 } else {
                     output += "1";

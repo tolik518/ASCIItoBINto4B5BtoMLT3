@@ -1,9 +1,12 @@
-export class TypeBinary {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TypeBinary = void 0;
+class TypeBinary {
     static fromAscii(ascii) {
-        let binary = ascii.split('') //https://stackoverflow.com/a/38362821
+        let binary = ascii.split('')
             .map((char) => '00'.concat(char.charCodeAt(0).toString(2)).slice(-8))
             .join('').match(/.{4}/g);
-        binary = binary || [""]; //wenn binary ist null oder undefined, dann setz auf leeres array
+        binary = binary || [""];
         let output = "";
         binary.forEach(function (bytes) {
             output += bytes + " ";
@@ -12,7 +15,7 @@ export class TypeBinary {
     }
     static fromHex(hex) {
         let binary = hex.replace(/\s/g, '').match(/.{1,2}/g);
-        binary = binary || [""]; //wenn binary ist null oder undefined, dann setz auf leeres array
+        binary = binary || [""];
         let output = "";
         if (binary[0] != "") {
             binary.forEach(function (bytes) {
@@ -24,10 +27,10 @@ export class TypeBinary {
     static get4b5bMap() {
         const keys = ["11110", "01001", "10100", "10101", "01010", "01011", "01110", "01111",
             "10010", "10011", "10110", "10111", "11010", "11011", "11100", "11101",
-            "00100", "11111", "11000", "10001", "00110", "00000", "00111", "11001", "01101"]; //Command Characters
+            "00100", "11111", "11000", "10001", "00110", "00000", "00111", "11001", "01101"];
         const values = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111",
             "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111",
-            "[_H]", "[_I]", "[_J]", "[_K]", "[_L]", "[_Q]", "[_R]", "[_S]", "[_T]"]; //Command Characters
+            "[_H]", "[_I]", "[_J]", "[_K]", "[_L]", "[_Q]", "[_R]", "[_S]", "[_T]"];
         const bmap = new Map();
         for (let i = 0; i < keys.length; i++) {
             bmap.set(keys[i], values[i]);
@@ -36,13 +39,10 @@ export class TypeBinary {
     }
     static from4B5B(code4b5b) {
         let output = "";
-        if (code4b5b == "") {
-            output = "";
-        }
-        else {
+        if (code4b5b !== "") {
             const map = this.get4b5bMap();
             let strArray = code4b5b.match(/.{1,6}/g);
-            strArray = strArray || [""]; //wenn strArray ist null oder undefined, dann setz auf leeres array
+            strArray = strArray || [""];
             strArray.forEach(function (item) {
                 output += map.get(item.trim()) == undefined ? "????" + " " : map.get(item.trim()) + " ";
             });
@@ -50,6 +50,7 @@ export class TypeBinary {
         return output;
     }
     static hex2bin(hex) {
-        return (parseInt(hex, 16).toString(2)).padStart(8, '0'); //https://stackoverflow.com/a/45054052
+        return (parseInt(hex, 16).toString(2)).padStart(8, '0');
     }
 }
+exports.TypeBinary = TypeBinary;

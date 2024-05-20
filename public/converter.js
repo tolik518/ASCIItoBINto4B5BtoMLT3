@@ -1,67 +1,69 @@
-import { TypeASCII } from "./Types/TypeASCII.js";
-import { TypeHex } from "./Types/TypeHex.js";
-import { TypeBinary } from "./Types/TypeBinary.js";
-import { Type4B5B } from "./Types/Type4B5B.js";
-import { TypeMLT3 } from "./Types/TypeMLT3.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const TypeASCII_js_1 = require("./Types/TypeASCII.js");
+const TypeHex_js_1 = require("./Types/TypeHex.js");
+const TypeBinary_js_1 = require("./Types/TypeBinary.js");
+const Type4B5B_js_1 = require("./Types/Type4B5B.js");
+const TypeMLT3_js_1 = require("./Types/TypeMLT3.js");
 class converter {
     static writeConvertedASCII() {
         let ascii = this.value;
         elementASCII.value = ascii;
-        let binary = TypeBinary.fromAscii(ascii);
+        let binary = TypeBinary_js_1.TypeBinary.fromAscii(ascii);
         elementBinary.value = binary;
-        let hex = TypeHex.fromAscii(ascii);
+        let hex = TypeHex_js_1.TypeHex.fromAscii(ascii);
         elementHex.value = hex;
-        let code4b5b = Type4B5B.fromBinary(binary);
+        let code4b5b = Type4B5B_js_1.Type4B5B.fromBinary(binary);
         element4B5B.value = code4b5b;
-        let codemlt3 = TypeMLT3.from4B5B(code4b5b);
+        let codemlt3 = TypeMLT3_js_1.TypeMLT3.from4B5B(code4b5b);
         elementMLT3.value = codemlt3;
     }
     static writeConvertedHex() {
         let hex = this.value;
         elementHex.value = hex;
-        let ascii = TypeASCII.fromHex(hex);
+        let ascii = TypeASCII_js_1.TypeASCII.fromHex(hex);
         elementASCII.value = ascii;
-        let binary = TypeBinary.fromHex(hex);
+        let binary = TypeBinary_js_1.TypeBinary.fromHex(hex);
         elementBinary.value = binary;
-        let code4b5b = Type4B5B.fromBinary(binary);
+        let code4b5b = Type4B5B_js_1.Type4B5B.fromBinary(binary);
         element4B5B.value = code4b5b;
-        let codemlt3 = TypeMLT3.from4B5B(code4b5b);
+        let codemlt3 = TypeMLT3_js_1.TypeMLT3.from4B5B(code4b5b);
         elementMLT3.value = codemlt3;
     }
     static writeConvertedBinary() {
         let binary = this.value;
         elementBinary.value = binary;
-        let hex = TypeHex.fromBinary(binary);
+        let hex = TypeHex_js_1.TypeHex.fromBinary(binary);
         elementHex.value = hex;
-        let ascii = TypeASCII.fromHex(hex);
+        let ascii = TypeASCII_js_1.TypeASCII.fromHex(hex);
         elementASCII.value = ascii;
-        let code4b5b = Type4B5B.fromBinary(binary);
+        let code4b5b = Type4B5B_js_1.Type4B5B.fromBinary(binary);
         element4B5B.value = code4b5b;
-        let codemlt3 = TypeMLT3.from4B5B(code4b5b);
+        let codemlt3 = TypeMLT3_js_1.TypeMLT3.from4B5B(code4b5b);
         elementMLT3.value = codemlt3;
     }
     static writeConverted4B5B() {
         let code4b5b = this.value;
         element4B5B.value = code4b5b;
-        let binary = TypeBinary.from4B5B(code4b5b);
+        let binary = TypeBinary_js_1.TypeBinary.from4B5B(code4b5b);
         elementBinary.value = binary;
-        let hex = TypeHex.fromBinary(binary);
+        let hex = TypeHex_js_1.TypeHex.fromBinary(binary);
         elementHex.value = hex;
-        let ascii = TypeASCII.fromHex(hex);
+        let ascii = TypeASCII_js_1.TypeASCII.fromHex(hex);
         elementASCII.value = ascii;
-        let codemlt3 = TypeMLT3.from4B5B(code4b5b);
+        let codemlt3 = TypeMLT3_js_1.TypeMLT3.from4B5B(code4b5b);
         elementMLT3.value = codemlt3;
     }
     static writeConvertedMLT3() {
         let codemlt3 = this.value;
         elementMLT3.value = codemlt3;
-        let code4b5b = Type4B5B.fromMLT3(codemlt3);
+        let code4b5b = Type4B5B_js_1.Type4B5B.fromMLT3(codemlt3);
         element4B5B.value = code4b5b;
-        let binary = TypeBinary.from4B5B(code4b5b);
+        let binary = TypeBinary_js_1.TypeBinary.from4B5B(code4b5b);
         elementBinary.value = binary;
-        let hex = TypeHex.fromBinary(binary);
+        let hex = TypeHex_js_1.TypeHex.fromBinary(binary);
         elementHex.value = hex;
-        let ascii = TypeASCII.fromHex(hex);
+        let ascii = TypeASCII_js_1.TypeASCII.fromHex(hex);
         elementASCII.value = ascii;
     }
 }

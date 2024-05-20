@@ -19,10 +19,7 @@ export class TypeHex
     {
         let output: string = "";
 
-        if(binary == "")
-        {
-            output = "";
-        } else {
+        if (binary !== "") {
             let hex: string[] = binary.trim().split(' ');
 
             hex.forEach(function (bytes: string) {

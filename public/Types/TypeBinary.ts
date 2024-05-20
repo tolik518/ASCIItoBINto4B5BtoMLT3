@@ -1,5 +1,3 @@
-import {Type4B5B} from "./Type4B5B";
-
 export class TypeBinary
 {
     public static fromAscii(ascii: string): string
@@ -25,7 +23,7 @@ export class TypeBinary
         binary = binary || [""]; //wenn binary ist null oder undefined, dann setz auf leeres array
         let output: string = "";
 
-        if(binary[0] != "")
+        if (binary[0] != "")
         {
             binary.forEach(function (bytes: string) {
                 output+= TypeBinary.hex2bin(bytes).replace(/\d{4}(?=.)/g, '$& ') + " ";
@@ -59,10 +57,7 @@ export class TypeBinary
     {
         let output: string = "";
 
-        if(code4b5b == "")
-        {
-            output = "";
-        } else {
+        if (code4b5b !== "") {
             const map: Map<string, string> = this.get4b5bMap();
 
             let strArray: string[] = code4b5b.match(/.{1,6}/g);

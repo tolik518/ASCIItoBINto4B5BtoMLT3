@@ -1,11 +1,13 @@
-export class TypeMLT3 {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TypeMLT3 = void 0;
+class TypeMLT3 {
     static from4B5B(code4b5b) {
         let output = "";
         let strArray = code4b5b.match(/./g);
-        strArray = strArray || [""]; //wenn strArray ist null oder undefined, dann setz auf leeres array
+        strArray = strArray || [""];
         let currentModifier = "UP";
         let lastsymbol = "0";
-        // @ts-ignore
         strArray.forEach(function (byte) {
             if (byte == "0") {
                 output += lastsymbol;
@@ -43,3 +45,4 @@ export class TypeMLT3 {
         return output.trim();
     }
 }
+exports.TypeMLT3 = TypeMLT3;

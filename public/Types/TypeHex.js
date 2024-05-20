@@ -1,9 +1,12 @@
-export class TypeHex {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TypeHex = void 0;
+class TypeHex {
     static fromAscii(ascii) {
-        let hex = ascii.split('') //https://stackoverflow.com/a/38362821
+        let hex = ascii.split('')
             .map((char) => ''.concat(char.charCodeAt(0).toString(16)).slice(-8))
             .join('').match(/.{2}/g);
-        hex = hex || [""]; //wenn binary ist null oder undefined, dann setz auf leeres array
+        hex = hex || [""];
         let output = "";
         hex.forEach(function (bytes) {
             output += bytes + " ";
@@ -12,16 +15,14 @@ export class TypeHex {
     }
     static fromBinary(binary) {
         let output = "";
-        if (binary == "") {
-            output = "";
-        }
-        else {
+        if (binary !== "") {
             let hex = binary.trim().split(' ');
             hex.forEach(function (bytes) {
                 output += parseInt(bytes, 2).toString(16).toUpperCase().replace(/NAN/g, "?");
             });
-            output = output.match(/.{1,2}/g).join(' '); //leerzeichen nach 2 symbolen hinzufügen
+            output = output.match(/.{1,2}/g).join(' ');
         }
         return output.trim();
     }
 }
+exports.TypeHex = TypeHex;

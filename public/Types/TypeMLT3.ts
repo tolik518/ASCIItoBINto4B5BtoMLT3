@@ -16,7 +16,7 @@ export class TypeMLT3
         // @ts-ignore
         strArray.forEach(function (byte: binary)
         {
-            if(byte == "0")
+            if (byte == "0")
             {
                 output += lastsymbol;
             }
