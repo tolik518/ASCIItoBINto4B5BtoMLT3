@@ -5,7 +5,7 @@ const TypeHex_js_1 = require("./Types/TypeHex.js");
 const TypeBinary_js_1 = require("./Types/TypeBinary.js");
 const Type4B5B_js_1 = require("./Types/Type4B5B.js");
 const TypeMLT3_js_1 = require("./Types/TypeMLT3.js");
-class converter {
+class Converter {
     static writeConvertedASCII() {
         let ascii = this.value;
         elementASCII.value = ascii;
@@ -68,12 +68,12 @@ class converter {
     }
 }
 const elementASCII = document.getElementById("ascii");
-elementASCII.addEventListener("input", converter.writeConvertedASCII, false);
+elementASCII.addEventListener("input", Converter.writeConvertedASCII, false);
 const elementHex = document.getElementById("hex");
-elementHex.addEventListener("input", converter.writeConvertedHex, false);
+elementHex.addEventListener("input", Converter.writeConvertedHex, false);
 const elementBinary = document.getElementById("binary");
-elementBinary.addEventListener("input", converter.writeConvertedBinary, false);
+elementBinary.addEventListener("input", Converter.writeConvertedBinary, false);
 const element4B5B = document.getElementById("4B5B");
-element4B5B.addEventListener("input", converter.writeConverted4B5B, false);
+element4B5B.addEventListener("input", Converter.writeConverted4B5B, false);
 const elementMLT3 = document.getElementById("MLT3");
-elementMLT3.addEventListener("input", converter.writeConvertedMLT3, false);
+elementMLT3.addEventListener("input", Converter.writeConvertedMLT3, false);

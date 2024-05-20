@@ -4,9 +4,8 @@ import {TypeBinary} from "./Types/TypeBinary.js";
 import {Type4B5B}   from "./Types/Type4B5B.js";
 import {TypeMLT3}   from "./Types/TypeMLT3.js";
 
-class converter
+class Converter
 {
-
     public static writeConvertedASCII(this: HTMLInputElement) :void
     {
         let ascii: string = this.value;
@@ -99,16 +98,16 @@ class converter
 }
 
 const elementASCII: HTMLInputElement = <HTMLInputElement>document.getElementById("ascii");
-elementASCII.addEventListener("input", converter.writeConvertedASCII, false);
+elementASCII.addEventListener("input", Converter.writeConvertedASCII, false);
 
 const elementHex: HTMLInputElement = <HTMLInputElement>document.getElementById("hex");
-elementHex.addEventListener("input", converter.writeConvertedHex, false);
+elementHex.addEventListener("input", Converter.writeConvertedHex, false);
 
 const elementBinary: HTMLInputElement = <HTMLInputElement>document.getElementById("binary");
-elementBinary.addEventListener("input", converter.writeConvertedBinary, false);
+elementBinary.addEventListener("input", Converter.writeConvertedBinary, false);
 
 const element4B5B: HTMLInputElement = <HTMLInputElement>document.getElementById("4B5B");
-element4B5B.addEventListener("input", converter.writeConverted4B5B, false);
+element4B5B.addEventListener("input", Converter.writeConverted4B5B, false);
 
 const elementMLT3: HTMLInputElement = <HTMLInputElement>document.getElementById("MLT3");
-elementMLT3.addEventListener("input", converter.writeConvertedMLT3, false);
+elementMLT3.addEventListener("input", Converter.writeConvertedMLT3, false);
