@@ -7,7 +7,7 @@ export class TypeASCII
 
         let ascii = '';
         for (let n = 0; n < hex.length; n += 2) {
-            ascii += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+            ascii += String.fromCharCode(parseInt(hex.slice(n, 2), 16));
         }
 
         return ascii;
