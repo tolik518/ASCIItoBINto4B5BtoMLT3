@@ -36,10 +36,7 @@ class Type4B5B {
     }
     static fromMLT3(codemlt3) {
         let output = "";
-        if (codemlt3 == "") {
-            output = "";
-        }
-        else {
+        if (codemlt3 !== "") {
             let codemlt3array = codemlt3.replace(/\s/g, '').match(/./g);
             let lastsymbol = ["0"].concat(codemlt3array);
             for (let i = 0; i < codemlt3array.length; i++) {
